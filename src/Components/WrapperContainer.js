@@ -1,11 +1,11 @@
 import React from 'react';
-import {View, Text, SafeAreaView, StatusBar} from 'react-native';
+import {View, Text, SafeAreaView, StatusBar, Platform} from 'react-native';
 import colors from '../styles/colors';
 
 export default function WrapperContainer({
   children,
   statusBarColor = colors.white,
-  barStyle = 'dark-content',
+  barStyle = Platform.OS == 'ios' ? 'dark-content' : 'light-content',
   bgColor = colors.white,
   containerStyle = {},
 }) {
